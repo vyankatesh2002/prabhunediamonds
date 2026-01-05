@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personalized Consultation | Prabhune Diamonds & Stones</title>
+    <title>Astrology Guidance | Prabhune Diamonds & Stones</title>
     <link rel="stylesheet" href="css/consultation.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
-   
+    <!-- Header & Navigation -->
     <header>
         <nav class="nav-bar">
             <div class="nav-left">
@@ -23,51 +24,105 @@
                 </div>
             </div>
 
+            <!-- Desktop Navigation -->
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="Products.html">Products</a></li>
-                <li><a href="consultation.html" class="active">Consultation</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="consultation.html">Consultation</a></li>
             </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
+
+            <!-- Hamburger Menu Button (Mobile/Tablet only) -->
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Open Menu Card Button -->
+            <button class="open-menu-btn" id="openMenuBtn">☰</button>
+
         </nav>
 
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
         <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="index.html" onclick="toggleMenu()">Home</a>
-            <a href="about.html" onclick="toggleMenu()">About</a>
-            <a href="Products.html" onclick="toggleMenu()">Products</a>
-            <a href="consultation.html" onclick="toggleMenu()">Consultation</a>
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" style="--i:0">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="about.html" style="--i:1">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="products.html" style="--i:2">
+                <i class="fas fa-gem"></i> Products
+            </a>
+            <a href="consultation.html" style="--i:3">
+                <i class="fas fa-handshake"></i> Consultation
+            </a>
+        </nav>
+
+        <!-- Menu Card -->
+        <div class="menu-card" id="menuCard">
+            <button class="close-menu-btn" id="closeMenuBtn">&times;</button>
+            <div class="menu-card-header">
+                <h3>Quick Navigation</h3>
+            </div>
+            <div class="menu-card-links">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-gem"></i>
+                    <span>Our Products</span>
+                </a>
+                <a href="consultation.html">
+                    <i class="fas fa-handshake"></i>
+                    <span>Consultation</span>
+                </a>
+            </div>
+            <div class="menu-card-footer">
+                <p>Need help? <a href="tel:+919822850279">Call us</a></p>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>
+
+                Astrological Consultation
+            </h1>
+            <p>
+                Expert Guidance in Gemmology, Astrology & Spiritual Sciences | 28+ Years of Experience
+            </p>
         </div>
 
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <h1>
+        <!-- Open Menu Button for Mobile -->
 
-                    Astrological Consultation
-                </h1>
-                <p>
-                    Expert Guidance in Gemmology, Astrology & Spiritual Sciences | 28+ Years of Experience
-                </p>
-            </div>
-        </section>
+    </section>
 
-        <!-- Guide Navigation -->
-        <section class="guide-nav">
-            <div class="container">
-                <div class="guide-nav-links">
-                    <a href="#consultation-types" class="guide-nav-link active">Consultation Types</a>
-                    <a href="#expert-profile" class="guide-nav-link">Expert Profile</a>
-                    <a href="#process" class="guide-nav-link">Our Process</a>
-                    <a href="#testimonials" class="guide-nav-link">Testimonials</a>
-                    <a href="#products-gallery" class="guide-nav-link">Our Products</a>
-                    <a href="#book-now" class="guide-nav-link">Book Consultation</a>
-                </div>
+    <!-- Guide Navigation -->
+    <section class="guide-nav">
+        <div class="container">
+            <div class="guide-nav-links">
+                <a href="#consultation-types" class="guide-nav-link active">Consultation Types</a>
+                <a href="#expert-profile" class="guide-nav-link">Expert Profile</a>
+                <a href="#process" class="guide-nav-link">Our Process</a>
+                <a href="#testimonials" class="guide-nav-link">Testimonials</a>
+                <a href="#products-gallery" class="guide-nav-link">Our Products</a>
+                <a href="#book-now" class="guide-nav-link">Book Consultation</a>
             </div>
-        </section>
+        </div>
+    </section>
     </header>
 
 
@@ -247,7 +302,7 @@
 
 
 
-        
+
         <!-- Testimonials -->
         <section class="testimonials-section" id="testimonials">
             <div class="container">
@@ -629,106 +684,9 @@
         </div>
     </footer>
 
-    <script>
-        // Booking Form Toggle
-        document.getElementById('bookAppointmentBtn').addEventListener('click', function (e) {
-            e.preventDefault();
-            document.getElementById('booking-form').style.display = 'block';
-            window.scrollTo({
-                top: document.getElementById('booking-form').offsetTop - 100,
-                behavior: 'smooth'
-            });
-        });
-
-        // Form Submission
-        document.getElementById('consultationBookingForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = {
-                name: document.getElementById('fullName').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value,
-                consultationType: document.getElementById('consultationType').value,
-                birthDate: document.getElementById('birthDate').value,
-                birthTime: document.getElementById('birthTime').value,
-                birthPlace: document.getElementById('birthPlace').value,
-                concerns: document.getElementById('concerns').value,
-                preferredDate: document.getElementById('preferredDate').value,
-                preferredTime: document.getElementById('preferredTime').value
-            };
-
-            // Send WhatsApp message
-            const phoneNumber = '919822850279';
-            const message = `*New Consultation Request*%0A%0A` +
-                `*Name:* ${formData.name}%0A` +
-                `*Phone:* ${formData.phone}%0A` +
-                `*Email:* ${formData.email}%0A` +
-                `*Consultation Type:* ${formData.consultationType}%0A` +
-                `*Birth Details:* ${formData.birthDate} at ${formData.birthTime} in ${formData.birthPlace}%0A` +
-                `*Concerns:* ${formData.concerns}%0A` +
-                `*Preferred Date:* ${formData.preferredDate}%0A` +
-                `*Preferred Time:* ${formData.preferredTime}`;
-
-            const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-
-            // Open WhatsApp
-            window.open(whatsappURL, '_blank');
-
-            // Show success message
-            alert('Booking request sent successfully! Our team will contact you shortly to confirm your appointment.');
-
-            // Reset form
-            document.getElementById('consultationBookingForm').reset();
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 100,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Mobile menu toggle
-        function toggleMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('active');
-        }
-
-        // Guide navigation active state
-        const guideLinks = document.querySelectorAll('.guide-nav-link');
-        const sections = document.querySelectorAll('section[id]');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (scrollY >= (sectionTop - 150)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            guideLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <!-- JavaScript Files -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/menu-card.js"></script>
 </body>
 
 </html>

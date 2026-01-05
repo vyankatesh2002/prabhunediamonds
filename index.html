@@ -2,50 +2,96 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prabhune Diamond – Integrity, Trust & Probity</title>
-
-<meta name="description" content="Prabhune Diamond is a trusted diamond brand delivering certified diamonds with integrity, trust, and probity.">
-
-<meta name="robots" content="index, follow">
-
-  <link rel="stylesheet" href="css/style.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astrology Guidance | Prabhune Diamonds & Stones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="nav-bar">
+            <div class="nav-left">
+                <img src="images/logos/PDS.jpg.jpeg" alt="PDS Logo" class="logo1">
+                <div class="brand-info">
+                    <h1>PRABHUNE DIAMONDS & STONES</h1>
+                    <p class="tagline">INTEGRITY, TRUST & PROBITY SINCE 1998</p>
+                </div>
+            </div>
 
+            <!-- Desktop Navigation -->
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="consultation.html">Consultation</a></li>
+            </ul>
 
-  <nav class="nav-bar">
-    <div class="nav-left">
-      <img src="images/logos/PDS.jpg.png" alt="PDS Logo" class="logo1">
-      <div class="brand-info">
-        <h1>PRABHUNE DIAMONDS AND STONES</h1>
-        <p class="tagline">INTEGRITY, TRUST AND PROBITY SINCE 1998</p>
-      </div>
-    </div>
+            <!-- Hamburger Menu Button (Mobile/Tablet only) -->
+            <button class="hamburger" id="hamburgerBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <!-- Open Menu Card Button -->
+            <button class="open-menu-btn" id="openMenuBtn">☰</button>
 
-    <ul class="nav">
-      <li><a href="#home">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="Products.html">Products</a></li>
-      <li><a href="consultation.html">Consultation</a></li>
-    </ul>
-    <div class="hamburger" id="hamburger">
-      <i class="fas fa-bars"></i>
-    </div>
+        </nav>
 
-    <nav class="mobile-menu" id="mobileMenu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#products">Products</a>
-      <a href="#login">Login</a>
-    </nav>
-  </nav>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" style="--i:0">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="about.html" style="--i:1">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="products.html" style="--i:2">
+                <i class="fas fa-gem"></i> Products
+            </a>
+            <a href="consultation.html" style="--i:3">
+                <i class="fas fa-handshake"></i> Consultation
+            </a>
+        </nav>
+
+        <!-- Menu Card -->
+        <div class="menu-card" id="menuCard">
+            <button class="close-menu-btn" id="closeMenuBtn">&times;</button>
+            <div class="menu-card-header">
+                <h3>Quick Navigation</h3>
+            </div>
+            <div class="menu-card-links">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-gem"></i>
+                    <span>Our Products</span>
+                </a>
+                <a href="consultation.html">
+                    <i class="fas fa-handshake"></i>
+                    <span>Consultation</span>
+                </a>
+            </div>
+            <div class="menu-card-footer">
+                <p>Need help? <a href="tel:+919822850279">Call us</a></p>
+            </div>
+        </div>
+    </header>
 
   <div class="home-container">
     <div class="Center-heading">
@@ -57,36 +103,60 @@
       <div class="btn1"><a href="Products.html" class="start-btn">View Gemstones</a></div>
       <div class="btn2"><a href="#contact-section" class="start-btn btn2">Book Consultations</a></div>
     </div>
+
+
   </div>
 
-  <section class="rudraksha-special">
-    <div class="premium-container">
-      <h1>Authentic Nepal Rudraksha</h1>
-      <p class="rudraksha-intro">
-        Tradition, Purity and Power<br>
-        We offer a premium collection of Natural Rudraksha beads from Nepal, ranging from 1 Mukhi to 14 Mukhi, including
-        special varieties like Ganesh, Gaurishankar, and Trijuti Rudraksha. Each bead is carefully selected to ensure
-        authenticity, energy, and spiritual significance. Every Rudraksha in our collection is tested for genuineness
-        and comes with a certificate confirming the number of mukhis, origin, and quality.
-      </p>
+  <div class="rudraksha-slider">
+    <button class="slide-btn left" onclick="slideLeft()">‹</button>
 
-      <div class="special-rudraksha">
-        <img src="images/icons/Saraswati-Bandha-Rudraksha.jpg" alt="Saraswati Rudraksha" class="special-img">
-        <h2>Saraswati Bandha Rudraksha</h2>
-        <h4>Wisdom and Knowledge</h4>
-        <p>Associated with wisdom, knowledge, and artistic inspiration. Enhances learning, creativity, and intellectual
-          growth for students, scholars, and artists.</p>
+    <div class="slider-track" id="sliderTrack">
+
+      <div class="rudraksha-card">
+        <img src="images/icons/Saraswati-Bandha-Rudraksha.jpg" alt="">
+        <h3>Saraswati Bandha</h3>
+        <span>Wisdom & Knowledge</span>
+        <p>Enhances learning, creativity, and intellectual power.</p>
+      </div>
+      <div class="rudraksha-card">
+        <img src="images/icons/Saraswati-Bandha-Rudraksha.jpg" alt="">
+        <h3>Saraswati Bandha</h3>
+        <span>Wisdom & Knowledge</span>
+        <p>Enhances learning, creativity, and intellectual power.</p>
+      </div>
+      <div class="rudraksha-card">
+        <img src="images/icons/Saraswati-Bandha-Rudraksha.jpg" alt="">
+        <h3>Saraswati Bandha</h3>
+        <span>Wisdom & Knowledge</span>
+        <p>Enhances learning, creativity, and intellectual power.</p>
       </div>
 
-      <div class="special-rudraksha">
-        <img src="images/icons/ganesh-rudra.jpg" alt="Ganesh Rudraksha" class="special-img">
-        <h2>Ganesh Rudraksha</h2>
-        <h4>Prosperity and Guidance</h4>
-        <p>Brings wisdom, prosperity, and removal of obstacles. Associated with Lord Ganesha, ideal for those seeking
-          clarity, guidance, and success.</p>
+      <div class="rudraksha-card">
+        <img src="images/icons/ganesh-rudra.jpg" alt="">
+        <h3>Ganesh Rudraksha</h3>
+        <span>Prosperity & Guidance</span>
+        <p>Removes obstacles and brings success and clarity.</p>
       </div>
+
+      <div class="rudraksha-card">
+        <img src="images/icons/gaurishankar.jpg" alt="">
+        <h3>Gaurishankar</h3>
+        <span>Harmony & Balance</span>
+        <p>Strengthens relationships and inner peace.</p>
+      </div>
+
+      <div class="rudraksha-card">
+        <img src="images/icons/trijuti.jpg" alt="">
+        <h3>Trijuti Rudraksha</h3>
+        <span>Spiritual Power</span>
+        <p>Rare bead symbolizing unity of divine energies.</p>
+      </div>
+
     </div>
-  </section>
+
+    <button class="slide-btn right" onclick="slideRight()">›</button>
+  </div>
+
 
   <section class="mukhi-special">
     <h1>Collection of Rudramala</h1>
@@ -244,8 +314,8 @@
 
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “I genuinely felt comfortable and confident after the consultation. His suggestions were practical and easy
-            to follow. Based on his guidance, I purchased a Rudraksha bead, and it truly feels special.”
+            "I genuinely felt comfortable and confident after the consultation. His suggestions were practical and easy
+            to follow. Based on his guidance, I purchased a Rudraksha bead, and it truly feels special."
           </p>
           <h3>— Vishwanathan Sajjan</h3>
           <span>Bangalore</span>
@@ -260,16 +330,16 @@
 
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “प्रभुणे डायमंड्स अ‍ॅन्ड स्टोन्स येथे माझा अनुभव अत्यंत समाधानकारक होता. प्रत्येक गोष्ट शांत आणि विश्वासार्ह
-            पद्धतीने समजावून सांगितली.”
+            "प्रभुणे डायमंड्स अॅन्ड स्टोन्स येथे माझा अनुभव अत्यंत समाधानकारक होता. प्रत्येक गोष्ट शांत आणि विश्वासार्ह
+            पद्धतीने समजावून सांगितली."
           </p>
           <h3>— Kailash Vaidya</h3>
           <span>Dubai</span>
         </div>
         <div class="testimonial-card">
           <p class="testimonial-text">
-            “My experience at Prabhune Diamonds and Stones was truly excellent. The people there are extremely kind,
-            supportive, and professional.”
+            "My experience at Prabhune Diamonds and Stones was truly excellent. The people there are extremely kind,
+            supportive, and professional."
           </p>
           <h3>— Vyankatesh Vivekanand Jaware</h3>
           <span>Nashik</span>
@@ -293,6 +363,10 @@
         Her journey demonstrates how consistent spiritual practice can support academic growth, creativity, and
         professional excellence.
       </p>
+      <p>
+        For personalized product consultation on gemstones and rudraksha, visit our <a
+          href="consultation.html">consultation page</a> to discover how our expertise can guide you.
+      </p>
     </div>
   </div>
 
@@ -301,7 +375,7 @@
 
       <div class="contact-left">
         <span class="badge">Contact Us</span>
-        <h1>Let’s Connect With Confidence</h1>
+        <h1>Let's Connect With Confidence</h1>
         <p class="subtitle">
           Trusted guidance, genuine advice, and a calm professional experience — we are here to help you make the right
           decision.
@@ -344,7 +418,7 @@
 
       <div class="contact-right">
         <h2>Send Us a Message</h2>
-        <form action="https://formsubmit.co/prabhunediamonds@gmail.com" method="POST">
+        <form action="https://formsubmit.co/vyankateshvjaware9960@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="New Consultation Request">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="_template" value="table">
@@ -410,7 +484,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="Products.html">Products</a></li>
-          <li><a href="cunsaltastion.html">cunsaltation</a></li>
+          <li><a href="consultation.html">Consultation</a></li>
         </ul>
       </div>
 
@@ -418,9 +492,9 @@
         <h4>Customer Service</h4>
         <ul>
           <li><a href="FAq.html">FAQs</a></li>
-          <li><a href="#">Terms and Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Return Policy</a></li>
+          <li><a href="terms.html">Terms and Conditions</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="Refund .html">Return Policy</a></li>
         </ul>
       </div>
 
@@ -445,6 +519,11 @@
     </div>
   </footer>
 
+  <!-- JavaScript Files -->
+   <script src="about.js"></script>
+    <!-- JavaScript Files -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/menu-card.js"></script>
 
 </body>
 

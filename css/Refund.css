@@ -1,0 +1,241 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: white;
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, #0D47A1, #2196F3);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  h1 {
+    color: #0D47A1;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  h1 i {
+    color: #2196F3;
+  }
+  
+  .tagline {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .policy-section {
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 15px;
+    border-left: 4px solid #2196F3;
+    transition: transform 0.3s ease;
+  }
+  
+  .policy-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(33, 150, 243, 0.1);
+  }
+  
+  h2 {
+    color: #0D47A1;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+  }
+  
+  h2 i {
+    width: 30px;
+    text-align: center;
+  }
+  
+  .policy-list {
+    list-style: none;
+  }
+  
+  .policy-list li {
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  }
+  
+  .policy-list li i {
+    color: #4CAF50;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  
+  .highlight {
+    color: #0D47A1;
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  .badge {
+    display: inline-block;
+    background: #E3F2FD;
+    color: #0D47A1;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-left: 5px;
+  }
+  
+  .contact-card {
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  .contact-card h2 {
+    justify-content: center;
+  }
+  
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+  }
+  
+  .contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 25px;
+    background: white;
+    border-radius: 10px;
+    min-width: 200px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+  
+  .contact-item i {
+    font-size: 1.8rem;
+    color: #0D47A1;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item p {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, #0D47A1, #2196F3);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+  }
+  
+  .footer-note {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px 25px;
+      margin: 15px auto;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .contact-info {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .contact-item {
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .policy-section {
+      padding: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.7rem;
+    }
+    
+    h2 {
+      font-size: 1.3rem;
+    }
+    
+    .container {
+      padding: 25px 20px;
+    }
+  }

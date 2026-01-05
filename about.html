@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Prabhune Diamonds & Stones</title>
+    <title>Astrology Guidance | Prabhune Diamonds & Stones</title>
     <link rel="stylesheet" href="css/about.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <!-- Header & Navigation -->
     <header>
         <nav class="nav-bar">
             <div class="nav-left">
@@ -23,18 +24,76 @@
                 </div>
             </div>
 
-
+            <!-- Desktop Navigation -->
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="Products.html">Products</a></li>
+                <li><a href="products.html">Products</a></li>
                 <li><a href="consultation.html">Consultation</a></li>
-
             </ul>
 
+            <!-- Hamburger Menu Button (Mobile/Tablet only) -->
+          
+
+            <!-- Open Menu Card Button -->
+            <button class="open-menu-btn" id="openMenuBtn">☰</button>
+
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" style="--i:0">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="about.html" style="--i:1">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="products.html" style="--i:2">
+                <i class="fas fa-gem"></i> Products
+            </a>
+            <a href="consultation.html" style="--i:3">
+                <i class="fas fa-handshake"></i> Consultation
+            </a>
+        </nav>
+
+        <!-- Menu Card -->
+        <div class="menu-card" id="menuCard">
+            <button class="close-menu-btn" id="closeMenuBtn">&times;</button>
+            <div class="menu-card-header">
+                <h3>Quick Navigation</h3>
+            </div>
+            <div class="menu-card-links">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-gem"></i>
+                    <span>Our Products</span>
+                </a>
+                <a href="consultation.html">
+                    <i class="fas fa-handshake"></i>
+                    <span>Consultation</span>
+                </a>
+            </div>
+            <div class="menu-card-footer">
+                <p>Need help? <a href="tel:+919822850279">Call us</a></p>
+            </div>
+        </div>
     </header>
 
+
+    <!-- JavaScript Files -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/menu-card.js"></script>
+    <script src="js/main.js"></script>
 
     <section class="home-hero">
         <div class="hero-overlay"></div>
@@ -61,7 +120,9 @@
                 <a href="products.html" class="btn-primary">Explore Our Collection</a>
                 <a href="prabhunediamonds@gmail.com" class="btn-outline">Book Consultation</a>
             </div>
-        </div>
+
+
+
     </section>
 
 
@@ -197,7 +258,8 @@
 
                 <!-- Image -->
                 <div class="founder-image">
-                    <img src="images/icons/Prabhune-sir.jpg.png" alt="Shreenivas Prabhune – Founder of Prabhune Diamonds">
+                    <img src="images/icons/Prabhune-sir.jpg.png"
+                        alt="Shreenivas Prabhune – Founder of Prabhune Diamonds">
                 </div>
 
                 <!-- Content -->
@@ -382,14 +444,9 @@
         </div>
     </footer>
     <script src="about.js"></script>
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const nav = document.querySelector('.nav');
-
-        hamburger.addEventListener('click', () => {
-            nav.classList.toggle('show');
-        });
-    </script>
+    <!-- JavaScript Files -->
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/menu-card.js"></script>
     </head>
 
 </html>

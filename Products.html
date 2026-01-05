@@ -9,9 +9,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -26,43 +24,100 @@
                 </div>
             </div>
 
-
+            <!-- Desktop Navigation -->
             <ul class="nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="Products.html">Products</a></li>
+                <li><a href="products.html">Products</a></li>
                 <li><a href="consultation.html">Consultation</a></li>
-
             </ul>
+
+            <!-- Hamburger Menu Button (Mobile/Tablet only) -->
+          
+
+            <!-- Open Menu Card Button -->
+            <button class="open-menu-btn" id="openMenuBtn">☰</button>
 
         </nav>
 
-        <!-- Page Hero -->
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <h1>
-                    Diamond And Gemstone <br>
-                    Guidance
-                </h1>
-                <p>
-                    Traditional Associations for Awareness & Study | 28+ Years of Expert Consultation
-                </p>
-            </div>
-        </section>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="menuOverlay"></div>
 
-        <!-- Guide Navigation -->
-        <section class="guide-nav">
-            <div class="container">
-                <div class="guide-nav-links">
-                    <a href="#life-areas" class="guide-nav-link active">Life Area Guidance</a>
-                    <a href="#planetary" class="guide-nav-link">Planetary Tools</a>
-                    <a href="#rudraksha" class="guide-nav-link">Rudraksha Guide</a>
-                    <a href="#energy-tools" class="guide-nav-link">Energy Tools</a>
-                    <a href="#consultation" class="guide-nav-link">Book Consultation</a>
-                </div>
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobileMenu">
+            <a href="index.html" style="--i:0">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="about.html" style="--i:1">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="products.html" style="--i:2">
+                <i class="fas fa-gem"></i> Products
+            </a>
+            <a href="consultation.html" style="--i:3">
+                <i class="fas fa-handshake"></i> Consultation
+            </a>
+        </nav>
+
+        <!-- Menu Card -->
+        <div class="menu-card" id="menuCard">
+            <button class="close-menu-btn" id="closeMenuBtn">&times;</button>
+            <div class="menu-card-header">
+                <h3>Quick Navigation</h3>
             </div>
-        </section>
+            <div class="menu-card-links">
+                <a href="index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About Us</span>
+                </a>
+                <a href="products.html">
+                    <i class="fas fa-gem"></i>
+                    <span>Our Products</span>
+                </a>
+                <a href="consultation.html">
+                    <i class="fas fa-handshake"></i>
+                    <span>Consultation</span>
+                </a>
+            </div>
+            <div class="menu-card-footer">
+                <p>Need help? <a href="tel:+919822850279">Call us</a></p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>
+                Diamond And Gemstone <br>
+                Guidance
+            </h1>
+            <p>
+                Traditional Associations for Awareness & Study | 28+ Years of Expert Consultation
+            </p>
+
+            <!-- Open Menu Button for Mobile -->
+
+        </div>
+    </section>
+
+    <!-- Guide Navigation -->
+    <section class="guide-nav">
+        <div class="container">
+            <div class="guide-nav-links">
+                <a href="#life-areas" class="guide-nav-link active">Life Area Guidance</a>
+                <a href="#planetary" class="guide-nav-link">Planetary Tools</a>
+                <a href="#rudraksha" class="guide-nav-link">Rudraksha Guide</a>
+                <a href="#energy-tools" class="guide-nav-link">Energy Tools</a>
+                <a href="#consultation" class="guide-nav-link">Book Consultation</a>
+            </div>
+        </div>
+    </section>
     </header>
 
     <!-- Guide Navigation -->
@@ -117,7 +172,7 @@
                 </div>
 
                 <div class="card">
-                    <img src="images/icons/Gomed.jpg"alt="Gomed gemstone">
+                    <img src="images/icons/Gomed.jpg" alt="Gomed gemstone">
                     <h3>Gomed</h3>
                     <small>Protects from negative energies and confusion (Rahu).</small>
                 </div>
@@ -571,100 +626,10 @@
             </div>
         </footer>
 
-        <script>
-            // Mobile menu toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
+        <!-- JavaScript Files -->
+        <script src="js/mobile-menu.js"></script>
+        <script src="js/menu-card.js"></script>
 
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-
-                // Change icon
-                const icon = menuToggle.querySelector('i');
-                if (icon.classList.contains('fa-bars')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-
-            // Guide navigation
-            const guideLinks = document.querySelectorAll('.guide-nav-link');
-            const sections = document.querySelectorAll('section[id]');
-
-            // Smooth scroll for guide links
-            guideLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-
-                    if (targetSection) {
-                        // Update active link
-                        guideLinks.forEach(l => l.classList.remove('active'));
-                        this.classList.add('active');
-
-                        // Scroll to section
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Update active link on scroll
-            window.addEventListener('scroll', () => {
-                let current = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-
-                    if (scrollY >= (sectionTop - 150)) {
-                        current = section.getAttribute('id');
-                    }
-                });
-
-                guideLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${current}`) {
-                        link.classList.add('active');
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
-
-            // Sticky header effect
-            window.addEventListener('scroll', () => {
-                const header = document.querySelector('header');
-                if (window.scrollY > 100) {
-                    header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
-                } else {
-                    header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
-                }
-            });
-
-            // Highlight table rows on hover
-            const tableRows = document.querySelectorAll('.rudraksha-table tr');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', function () {
-                    this.style.transition = 'background-color 0.3s';
-                });
-            });
-        </script>
 </body>
 
 </html>

@@ -1,4 +1,3 @@
-
 :root {
     --primary-blue: #0A2463;
     --gold: #D4AF37;
@@ -12,7 +11,6 @@
     --green: #228B22;
     --red: #800000;
 }
-
 
 * {
     margin: 0;
@@ -37,7 +35,6 @@ h1, h2, h3, h4, h5 {
     font-weight: 600;
 }
 
-
 .container {
     width: 100%;
     max-width: 1200px;
@@ -49,12 +46,14 @@ section {
     padding: 60px 0;
 }
 
-
+/* =========================================
+   NAVBAR - FIXED: Clean structure
+   ========================================= */
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 40px;
+    padding: 15px 40px;
     background-color: #090909;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
@@ -75,33 +74,422 @@ section {
     width: auto;
 }
 
-.brand-info h1 {
-    font-size: 1.5rem;
-    color: #fff;
+.brand-info {
+    display: flex;
+    flex-direction: column;
 }
 
-.brand-info .tagline {
-    font-size: 0.9rem;
+.brand-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-name .primary {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+}
+
+.brand-name .secondary {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.3px;
+    margin-top: 2px;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
     color: #d9a45f;
+    margin-top: 5px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    border-left: 2px solid #d4af37;
+    padding-left: 10px;
 }
 
 .nav {
     display: flex;
     gap: 25px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav li a {
     text-decoration: none;
     color: #fff;
     font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
 }
 
 .nav li a:hover {
     color: #d9a45f;
 }
 
+.nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d9a45f;
+    transition: width 0.3s;
+}
 
+.nav li a:hover::after {
+    width: 100%;
+}
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    z-index: 1002;
+}
+
+.hamburger span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background: var(--gold);
+    margin: 6px 0;
+    transition: all 0.3s ease;
+    border-radius: 3px;
+}
+
+.hamburger:hover span {
+    background: var(--light-gold);
+}
+
+/* Open Menu Button for Menu Card */
+.open-menu-btn {
+    background: linear-gradient(135deg, var(--gold), var(--light-gold));
+    color: var(--dark-blue);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    margin-left: 15px;
+}
+
+.open-menu-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+    padding: 100px 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+/* Mobile Menu Links */
+.mobile-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 3px solid transparent;
+    transform: translateX(100px);
+    opacity: 0;
+    animation: slideIn 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.1s);
+}
+
+.mobile-menu a:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+    padding-left: 25px;
+}
+
+.mobile-menu a i {
+    width: 20px;
+    text-align: center;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Menu Card */
+.menu-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue));
+    width: 90%;
+    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    z-index: 1003;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.menu-card.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.menu-card-header {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 25px 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.menu-card-header h3 {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.close-menu-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--gold);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 1004;
+}
+
+.close-menu-btn:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--light-gold);
+    transform: rotate(90deg);
+}
+
+.menu-card-links {
+    padding: 30px;
+}
+
+.menu-card-links a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--white);
+    text-decoration: none;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu-card-links a:hover {
+    background: rgba(212, 175, 55, 0.1);
+    border-left: 4px solid var(--gold);
+    padding-left: 25px;
+    color: var(--gold);
+    transform: translateX(5px);
+}
+
+.menu-card-links a i {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.menu-card-links a span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.menu-card-footer {
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-card-footer p {
+    color: var(--light-gold);
+    font-size: 0.9rem;
+}
+
+.menu-card-footer a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu-card-footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav {
+        gap: 20px;
+    }
+    
+    .nav li a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide desktop nav, show hamburger and open menu button */
+    .nav {
+        display: none;
+    }
+
+    .open-menu-btn {
+        display: inline-block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+    
+    .nav-bar {
+        padding: 12px 20px;
+    }
+    
+    .logo1 {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .brand-info h1 {
+        font-size: 1.1rem;
+    }
+    
+    .tagline {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+    
+    .open-menu-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-menu {
+        width: 280px;
+        padding: 80px 20px 30px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+    
+    .menu-card {
+        width: 95%;
+    }
+    
+    .menu-card-links {
+        padding: 20px;
+    }
+    
+    .menu-card-links a {
+        padding: 12px 15px;
+    }
+}
+
+/* Animation for active hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+}
+
+/* =========================================
+   PAGE HERO SECTION
+   ========================================= */
 .page-hero {
     background: linear-gradient(135deg, #111010, #353535);
     color: #ffffff;
@@ -133,45 +521,54 @@ section {
     margin: 0 auto;
 }
 
+/* =========================================
+   GUIDE NAVIGATION
+   ========================================= */
 .guide-nav {
-    background: #ffffff;
-    padding: 15px 0;
-    position: sticky;
-    top: 80px;
-    z-index: 999;
-    border-bottom: 1px solid #eee;
+    background: var(--light-gray);
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .guide-nav-links {
     display: flex;
     justify-content: center;
-    gap: 22px;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 .guide-nav-link {
+    padding: 12px 24px;
+    background: white;
+    color: var(--charcoal);
     text-decoration: none;
-    font-size: 0.9rem;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 22px;
-    background: #f7f7f7;
-    transition: 0.3s ease;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
 }
 
-.guide-nav-link:hover,
+.guide-nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 .guide-nav-link.active {
-    background: #000;
-    color: #fff;
+    background: var(--gold);
+    color: var(--primary-blue);
+    border-color: var(--primary-blue);
 }
 
-
+/* =========================================
+   GRID AND CARD LAYOUTS
+   ========================================= */
 .grid,
 .products-grid,
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
 }
 
 .card,
@@ -182,6 +579,7 @@ section {
     text-align: center;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
 }
 
 .card:hover,
@@ -191,23 +589,49 @@ section {
     box-shadow: 0 12px 28px rgba(0,0,0,0.15);
 }
 
-
+/* =========================================
+   FIXED IMAGE STYLING FOR CARDS
+   ========================================= */
 .card img,
 .product img,
-.info-box img {
+.info-box img,
+.energy-tool-icon img,
+.planetary-card img,
+.item-list img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img,
+.product:hover img,
+.info-box:hover img,
+.planetary-card:hover img {
+    transform: scale(1.05);
 }
 
 .card h3,
 .product h3,
 .info-box h3 {
-    padding: 15px;
-    font-size: 1.1rem;
+    padding: 20px 15px 15px;
+    font-size: 1.2rem;
+    color: #222;
 }
 
+.card p,
+.product p,
+.info-box p {
+    padding: 0 15px 20px;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
 
+/* =========================================
+   SPECIFIC SECTIONS
+   ========================================= */
 #jewellery-types {
     background-color: #faf7f2;
 }
@@ -218,71 +642,26 @@ section {
     margin-bottom: 50px;
 }
 
-
 .info-box ul {
     list-style: none;
-    padding: 0;
+    padding: 0 15px 20px;
+    margin: 0;
 }
 
 .info-box ul li {
     font-size: 14px;
-    padding: 6px 0;
+    padding: 8px 0;
     border-bottom: 1px solid #eee;
+    text-align: left;
 }
 
-
-.site-footer {
-    background: #111;
-    color: #ccc;
-    text-align: center;
-    padding: 25px;
-    font-size: 14px;
+.info-box ul li:last-child {
+    border-bottom: none;
 }
 
-
-@media (max-width: 768px) {
-    .page-hero {
-        padding: 90px 0 40px;
-    }
-
-    .page-hero h1 {
-        font-size: 2rem;
-    }
-
-    .guide-nav-links {
-        gap: 12px;
-    }
-
-    .guide-nav-link {
-        font-size: 0.8rem;
-        padding: 6px 12px;
-    }
-}
-
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-
-.section-title {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.section-title h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #222;
-}
-
-.section-subtitle {
-    font-size: 15px;
-    color: #777;
-}
-
-
+/* =========================================
+   LIFE AREAS GRID
+   ========================================= */
 .life-areas-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -310,7 +689,6 @@ section {
     color: #111;
 }
 
-
 .item-list {
     list-style: none;
     padding: 0;
@@ -324,17 +702,18 @@ section {
 }
 
 .item-list img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
     margin-right: 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #ddd;
 }
 
 .item-text {
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .item-title {
@@ -348,7 +727,9 @@ section {
     color: #666;
 }
 
-
+/* =========================================
+   SECTION INFO
+   ========================================= */
 .section-info {
     margin-top: 40px;
     padding: 25px 30px;
@@ -368,9 +749,9 @@ section {
     color: #8b0000;
 }
 
-/* ==============================
+/* =========================================
    HIGHLIGHTS LIST
-============================== */
+   ========================================= */
 .highlights {
     list-style: none;
     padding: 0;
@@ -389,97 +770,12 @@ section {
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
-/* ==============================
-   GENERIC SECTION STYLING
-============================== */
-section {
-    padding: 60px 0;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    color: #222;
-}
-
-/* ==============================
-   INFO GRID
-============================== */
-.info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}
-
-.info-box {
-    background: #f9f9f9;
-    padding: 22px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.info-box:hover {
-    transform: translateY(-4px);
-}
-
-.info-box h3 {
-    margin-bottom: 12px;
-    color: #111;
-    font-size: 18px;
-}
-
-.info-box ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.info-box ul li {
-    padding: 6px 0;
-    border-bottom: 1px solid #ddd;
-    font-size: 14px;
-    color: #444;
-}
-
-.info-box ul li:last-child {
-    border-bottom: none;
-}
-
-/* ==============================
-   MOBILE RESPONSIVE
-============================== */
-@media (max-width: 600px) {
-    .section-info {
-        padding: 20px;
-    }
-
-    .section-info p {
-        font-size: 15px;
-    }
-
-    .highlights li {
-        font-size: 14px;
-    }
-
-    .life-areas-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-        
-        /* Planetary Tools Section */
+/* =========================================
+   PLANETARY SECTION
+   ========================================= */
 .planetary-section {
-    padding: 100px 0;
-    color: #ffffff;
-    background: linear-gradient(rgba(55, 55, 32, 0.9), rgba(6, 6, 6, 0.9)), ;
-    background-size: cover;
-    background-attachment: fixed;
-}
-        
-  .planetary-section {
     padding: 70px 0;
-    background: #f9f7f3;
+    background: linear-gradient(rgba(32, 31, 30, 0.95), rgba(4, 4, 4, 0.95));
     color: rgb(255, 255, 255);
 }
 
@@ -505,10 +801,11 @@ section h2 {
 
 .planetary-card {
     background: #2d2c2c;
-    padding: 22px;
+    padding: 0;
     box-shadow: 0 10px 30px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .planetary-card:hover {
@@ -518,10 +815,14 @@ section h2 {
 
 .planetary-card img {
     width: 100%;
-    height: 190px;
+    height: 220px;
     object-fit: cover;
-    margin-bottom: 18px;
-    border-radius: 10px;
+    margin-bottom: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.planetary-card-content {
+    padding: 22px;
 }
 
 .planetary-card h3 {
@@ -536,70 +837,20 @@ section h2 {
     color: #ffffff;
 }
 
-        /* Rudraksha Section */
-        .rudraksha-section {
-            padding: 100px 0;
-            background-color: var(--white);
-        }
-        
-        .rudraksha-content {
-            background: var(--cream);
-            border-radius: 15px;
-            padding: 50px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-        
-        .rudraksha-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 30px;
-        }
-        
-        .rudraksha-table th {
-            background: var(--primary-blue);
-            color: white;
-            padding: 15px;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .rudraksha-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .rudraksha-table tr:hover {
-            background: rgba(212, 175, 55, 0.1);
-        }
-        
-        .mukhi-badge {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--primary-blue);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        /* Energy Tools Section */
- .energy-tools-section {
+/* =========================================
+   ENERGY TOOLS SECTION
+   ========================================= */
+.energy-tools-section {
     padding: 80px 20px;
     background: #8198ff;
 }
 
-.section-title h2 {
-    text-align: center;
-    font-size: 34px;
-    margin-bottom: 10px;
+.energy-tools-section .section-title h2 {
     color: #151313;
 }
 
-.section-subtitle {
-    text-align: center;
-    font-size: 16px;
+.energy-tools-section .section-subtitle {
     color: #000000;
-    margin-bottom: 50px;
 }
 
 .energy-tools-grid {
@@ -623,8 +874,8 @@ section h2 {
 }
 
 .energy-tool-icon {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     margin: 0 auto 20px;
     border-radius: 50%;
     overflow: hidden;
@@ -651,263 +902,342 @@ section h2 {
     line-height: 1.6;
 }
 
-        /* Consultation CTA */
-        .consultation-cta {
-            padding: 100px 0;
-            background-color: var(--white);
-            text-align: center;
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-content h2 {
-            color: var(--primary-blue);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            color: #ffffff;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--gold);
-            color: var(--primary-blue);
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-5px);
-        }
-        
-        .cta-button.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-        
-        .cta-button.whatsapp:hover {
-            background: #128C7E;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--dark-blue);
-            color: white;
-            padding: 80px 0 30px;
-        }
-        
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-        
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            color: white;
-            margin-bottom: 20px;
-        }
-        
-        .footer-about p {
-            margin-bottom: 25px;
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links h3, .footer-contact h3 {
-            color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            position: relative;
-        }
-        
-        .footer-links h3:after, .footer-contact h3:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background: var(--gold);
-            bottom: -10px;
-            left: 0;
-        }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-        
-        .footer-links a:hover {
-            opacity: 1;
-            color: var(--gold);
-            padding-left: 5px;
-        }
-        
-        .footer-contact-info {
-            margin-bottom: 25px;
-        }
-        
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .footer-contact-item i {
-            color: var(--gold);
-            margin-right: 15px;
-            margin-top: 5px;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 40px;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1100px) {
-            .life-areas-grid,
-            .planetary-grid,
-            .energy-tools-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .rudraksha-content {
-                padding: 30px;
-            }
-            
-            .page-hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                flex-wrap: wrap;
-            }
-            
-            .menu-toggle {
-                display: block;
-                order: 1;
-            }
-            
-            .logo {
-                order: 0;
-            }
-            
-            .nav-links {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                order: 3;
-                margin-top: 20px;
-                background: var(--white);
-                padding: 20px;
-                border-radius: 10px;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .nav-links li {
-                margin: 10px 0;
-            }
-            
-            .guide-nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .guide-nav-link {
-                width: 80%;
-                text-align: center;
-            }
-            
-            .life-areas-grid,
-            .planetary-grid,
-            .energy-tools-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .rudraksha-table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .cta-button {
-                width: 80%;
-                max-width: 300px;
-                justify-content: center;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .life-area-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-        }
+/* =========================================
+   CONSULTATION CTA
+   ========================================= */
+.consultation-cta {
+    padding: 100px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: var(--charcoal);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--primary-blue);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--primary-blue);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.cta-button.whatsapp {
+    background: #25D366;
+    color: white;
+}
+
+.cta-button.whatsapp:hover {
+    background: #128C7E;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background-color: var(--dark-blue);
+    color: white;
+    padding: 80px 0 30px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.footer-about p {
+    margin-bottom: 25px;
+    opacity: 0.8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-links h3, .footer-contact h3 {
+    color: var(--gold);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer-links h3:after, .footer-contact h3:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    background: var(--gold);
+    bottom: -10px;
+    left: 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--gold);
+    padding-left: 5px;
+}
+
+.footer-contact-info {
+    margin-bottom: 25px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.footer-contact-item i {
+    color: var(--gold);
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 1100px) {
+    .life-areas-grid,
+    .planetary-grid,
+    .energy-tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav {
+        gap: 15px;
+    }
+    
+    .nav-bar {
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Show hamburger, hide desktop nav */
+    .hamburger {
+        display: block;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .page-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .page-hero {
+        padding: 100px 0 40px;
+    }
+    
+    .guide-nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .life-areas-grid,
+    .planetary-grid,
+    .energy-tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid,
+    .products-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer-links h3:after, .footer-contact h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-contact-item {
+        justify-content: center;
+    }
+    
+    .item-list li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .item-list img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .item-text {
+        text-align: center;
+    }
+    
+    .mobile-menu {
+        width: 280px;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.1rem;
+        padding: 14px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .planetary-card img,
+    .card img,
+    .product img,
+    .info-box img {
+        height: 200px;
+    }
+    
+    .energy-tool-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .mobile-menu {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .mobile-menu.active {
+        right: 0;
+    }
+    
+    .hamburger {
+        font-size: 1.8rem;
+        margin-left: 10px;
+    }
+}
+
+/* Animation for mobile menu items */
+.mobile-menu a {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    transition-delay: calc(0.1s * var(--i));
+}
+
+.mobile-menu.active a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Add active state for current page in mobile menu */
+.mobile-menu a.active {
+    background-color: rgba(212, 175, 55, 0.15);
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+    font-weight: 600;
+}
