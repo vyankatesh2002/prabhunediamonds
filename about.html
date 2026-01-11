@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astrology Guidance | Prabhune Diamonds & Stones</title>
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/contact-enhanced.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
@@ -17,7 +18,7 @@
     <header>
         <nav class="nav-bar">
             <div class="nav-left">
-                <img src="images/logos/PDS.jpg.jpeg" alt="PDS Logo" class="logo1">
+                <a href="index.html"><img src="images/logos/PDS.jpg.jpeg" alt="PDS Logo" class="logo1"></a>
                 <div class="brand-info">
                     <h1>PRABHUNE DIAMONDS & STONES</h1>
                     <p class="tagline">INTEGRITY, TRUST & PROBITY SINCE 1998</p>
@@ -32,12 +33,8 @@
                 <li><a href="consultation.html">Consultation</a></li>
             </ul>
 
-            <!-- Hamburger Menu Button (Mobile/Tablet only) -->
-            <button class="hamburger" id="hamburgerBtn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+
+
 
             <!-- Open Menu Card Button -->
             <button class="open-menu-btn" id="openMenuBtn">☰</button>
@@ -94,6 +91,7 @@
     </header>
 
 
+
     <!-- JavaScript Files -->
     <script src="js/mobile-menu.js"></script>
     <script src="js/menu-card.js"></script>
@@ -122,7 +120,7 @@
 
             <div class="hero-actions">
                 <a href="products.html" class="btn-primary">Explore Our Collection</a>
-                <a href="prabhunediamonds@gmail.com" class="btn-outline">Book Consultation</a>
+                <a href="#contact-section" class="btn-outline">Book Consultation</a>
             </div>
 
 
@@ -383,6 +381,82 @@
                 <a href="https://maps.app.goo.gl/dfF5p5Lbwp7nNJmB6" class="contact-btn">
                     <i class="fas fa-map-marker-alt"></i> Visit Our Store
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact-section" class="contact-hero">
+        <div class="contact-wrapper">
+            <div class="contact-left">
+                <span class="badge">Book Consultation</span>
+                <h1>Let's Connect With Confidence</h1>
+                <p class="subtitle">
+                    Trusted guidance, genuine advice, and a calm professional experience — we are here to help you make
+                    the right decision.
+                </p>
+
+                <div class="contact-box">
+                    <h3>📧 Email Us</h3>
+                    <p>
+                        <a href="mailto:prabhunediamonds@gmail.com" style="text-decoration: none; color: inherit;">
+                            prabhunediamonds@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>📞 Phone Numbers</h3>
+                    <p>
+                        <strong>Consultations:</strong><br>
+                        Shreenivas Prabhune
+                        <a href="tel:+919822850279" style="text-decoration: none; color: inherit;">+91 9822850279</a> /
+                        <a href="tel:+919822196577" style="text-decoration: none; color: inherit;">+91 9822196577</a>
+                    </p>
+                    <p>
+                        <strong>Products:</strong><br>
+                        <a href="tel:+919561966679" style="text-decoration: none; color: inherit;">+91 9561966679</a>
+                    </p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>💬 Connect With Us</h3>
+                    <p>
+                        <a href="https://wa.me/919822850279?text=Hello%20Prabhune%20Diamonds,%20I%20would%20like%20to%20book%20a%20consultation"
+                            target="_blank" style="text-decoration: none; color: inherit;">
+                            WhatsApp: +91 9822850279
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <h2>Send Us a Message</h2>
+                <form action="https://formsubmit.co/prabhunediamonds@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Consultation Request from About Page">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="Full Name" placeholder="Full Name *" required>
+                    <input type="email" name="Email" placeholder="Email Address *" required>
+                    <input type="text" name="Phone" placeholder="Phone Number *" required>
+                    <select name="Consultation Topic" required>
+                        <option value="">Select Consultation Topic</option>
+                        <option value="Gemstone Selection">Gemstone Selection</option>
+                        <option value="Rudraksha Consultation">Rudraksha Consultation</option>
+                        <option value="Astrological Analysis">Astrological Analysis</option>
+                        <option value="Numerology Reading">Numerology Reading</option>
+                        <option value="Vastu Consultation">Vastu Consultation</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <input type="date" name="Preferred Date" required>
+                    <select name="Preferred Time" required>
+                        <option value="">Select Preferred Time</option>
+                        <option value="Morning (10 AM - 2 PM)">Morning (10 AM - 2 PM)</option>
+                        <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                    </select>
+                    <textarea name="Message" placeholder="Tell us about your requirements..." rows="4"></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
             </div>
         </div>
     </section>

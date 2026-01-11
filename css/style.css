@@ -196,8 +196,7 @@ header {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(26, 35, 126, 0.95);
-    backdrop-filter: blur(10px);
+    background: #1a237e;
     border-radius: 15px;
     padding: 25px;
     box-shadow: var(--shadow-glow);
@@ -206,6 +205,8 @@ header {
     transform: translateX(150%);
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     width: 300px;
+    height: auto;
+    min-height: unset;
 }
 
 .menu-card.active {
@@ -369,23 +370,13 @@ header {
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
 }
 
-.start-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.7s ease;
-}
 
 .start-btn:hover::before {
     left: 100%;
 }
 
 .start-btn:hover {
-    transform: translateY(-5px);
+    transform: translateY(5px);
     box-shadow: 0 15px 40px rgba(212, 175, 55, 0.6);
 }
 
