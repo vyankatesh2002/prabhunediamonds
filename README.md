@@ -1,53 +1,30 @@
-Hi 👋, I'm Vyankatesh Jaware
+# 💎 Prabhune Diamonds Website
 
-🚀 **Frontend Developer | AI Builder | Founder of Vandvik**
-💡 Passionate about building modern web apps and intelligent AI systems.
-
- 🚀 About Me
-
-* 🌱 Currently learning **JavaScript, C++, and AI Development**
-* 🤖 Building my AI project **Vandvik**
-* 💻 Focused on **Web Development and Artificial Intelligence**
-* 🎯 Goal: Build powerful AI systems that help people globally
-
----
- 🛠 Skills
-
-<p>
-<img src="https://skillicons.dev/icons?i=html,css,js,cpp,git,github" />
-</p>
+A modern business website built for showcasing diamond products and services with responsive design and SEO optimization.
 
 ---
 
- 📊 GitHub Stats
+## 🚀 Live Website
+👉 https://prabhunediamond.com/
 
-![Vyankatesh's GitHub stats](https://github-readme-stats.vercel.app/api?username=vyankatesh2002\&show_icons=true\&theme=tokyonight)
+---
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=vyankatesh2002\&layout=compact\&theme=tokyonight)
+## 📸 Features
+- Responsive Design (Mobile + Desktop)
+- SEO Optimized (Sitemap + Robots.txt)
+- Product Showcase Pages
+- Consultation Page
+- Portfolio Section
+- Fast Loading UI
 
-🔥 Contribution Streak
+---
 
-![GitHub Streak](https://streak-stats.demolab.com/?user=vyankatesh2002\&theme=tokyonight)
+## 📦 Tech Stack
+- HTML
+- CSS
+- JavaScript
 
- 📂 Featured Projects
+---
 
- 🤖 Vandvik AI
-
-AI assistant designed to interact with users and provide intelligent responses.
-
- 💎 Prabhune Diamonds Website
-
-Business website built with HTML, CSS and JavaScript.
-
-🌐 Portfolio Website
-
-Personal portfolio showcasing development work and projects.
-
-📫 Contact
-
-📧 **Email:** [vyankateshvjaware2002@gmail.com](mailto:vyankateshvjaware2002@gmail.com)
-🌍 **Website:** https://prabhunediamond.com
-
-
-
-⭐ *Always learning. Always building.*
+## 👨‍💻 Developer
+Vyankatesh Vivekanand Jaware
