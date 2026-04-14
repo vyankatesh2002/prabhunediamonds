@@ -1,30 +1,61 @@
-# 💎 Prabhune Diamonds Website
+# 👋 Hi, I'm Vyankatesh Jaware
 
-A modern business website built for showcasing diamond products and services with responsive design and SEO optimization.
-
----
-
-## 🚀 Live Website
-👉 https://prabhunediamond.com/
+🚀 Web Developer | Building Real Business Websites
+💼 Delivered Live Client Project (Prabhune Diamonds)
+⚡ Focused on Performance, SEO & Conversion
 
 ---
 
-## 📸 Features
-- Responsive Design (Mobile + Desktop)
-- SEO Optimized (Sitemap + Robots.txt)
-- Product Showcase Pages
-- Consultation Page
-- Portfolio Section
-- Fast Loading UI
+## 💎 Featured Project
+
+### Prabhune Diamonds Website
+
+🔗 https://prabhunediamond.com
+
+* Built a complete business website
+* Fully responsive & SEO-ready
+* WhatsApp integration for direct leads
+
+👉 Live project used by a real business
 
 ---
 
-## 📦 Tech Stack
-- HTML
-- CSS
-- JavaScript
+## ⚡ About Me
+
+I build websites that are not just designed — but used by real businesses.
+
+From a small village in Maharashtra, I started with limited resources and focused on learning by building.
+
+Now I create practical, performance-driven websites and aim to move into full-stack development.
 
 ---
 
-## 👨‍💻 Developer
-Vyankatesh Vivekanand Jaware
+## 🛠️ Tech Stack
+
+HTML · CSS · JavaScript
+Git · GitHub · SEO
+
+---
+
+## 🚀 Projects
+
+* Calculator App
+* To-Do List App
+* Portfolio Website
+
+---
+
+## 🏗️ Building Next
+
+* Vynora (Ride Service)
+* Vandvik (AI System)
+
+---
+
+## 📬 Contact
+
+📧 [vyankateshvjaware2002@gmail.com](mailto:vyankateshvjaware2002@gmail.com)
+
+---
+
+> Build real things. Improve daily.
