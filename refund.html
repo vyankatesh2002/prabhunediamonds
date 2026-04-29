@@ -1,54 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta name="description" content="Unique description">
-<link rel="canonical" href="https://yourdomain.com/page.html">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Return & Refund Policy | Our Store</title>
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="canonical" href="https://prabhunediamond.com/refund.html" />
+  <link rel="canonical" href="https://yourdomain.com/page.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Return & Refund Policy | Our Store</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="canonical" href="https://prabhunediamond.com/refund.html" />
 
-<link rel="stylesheet" href="css/Refund.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Refund.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+  <!-- Header & Navigation -->
+  <header>
+    <nav class="nav-bar">
+      <div class="nav-left">
+        <a href="index.html"><img src="images/logos/PDS.jpg.jpeg" alt="PDS Logo" class="logo1"></a>
+        <div class="brand-info">
+          <h1>PRABHUNE DIAMONDS & STONES</h1>
+          <p class="tagline">INTEGRITY, TRUST & PROBITY SINCE 1998</p>
+        </div>
+      </div>
+      <script src="js/navbar-active.js" defer></script>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="consultation.html">Consultation</a></li>
+      </ul>
+
+      <!-- Open Menu Card Button -->
+      <button class="open-menu-btn" id="openMenuBtn">☰</button>
+
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html" style="--i:0">
+        <i class="fas fa-home"></i> Home
+      </a>
+      <a href="about.html" style="--i:1">
+        <i class="fas fa-info-circle"></i> About Us
+      </a>
+      <a href="Products.html" style="--i:2">
+        <i class="fas fa-gem"></i> Our Products
+      </a>
+      <a href="consultation.html" style="--i:3">
+        <i class="fas fa-handshake"></i> Consultation
+      </a>
+    </nav>
+
+    <!-- Menu Card -->
+    <div class="menu-card" id="menuCard">
+      <button class="close-menu-btn" id="closeMenuBtn">&times;</button>
+      <div class="menu-card-header">
+        <h3>Quick Navigation</h3>
+      </div>
+      <div class="menu-card-links">
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+        <a href="about.html">
+          <i class="fas fa-info-circle"></i>
+          <span>About Us</span>
+        </a>
+        <a href="Products.html">
+          <i class="fas fa-gem"></i>
+          <span>Our Products</span>
+        </a>
+        <a href="consultation.html">
+          <i class="fas fa-handshake"></i>
+          <span>Consultation</span>
+        </a>
+      </div>
+      <div class="menu-card-footer">
+        <p>Need help? <a href="tel:+919822850279">Call us</a></p>
+      </div>
+    </div>
+  </header>
+
   <div class="container">
     <div class="header">
       <h1><i class="fas fa-exchange-alt"></i> Return & Refund Policy</h1>
-      <p class="tagline">We're committed to ensuring you have a hassle-free shopping experience. If you're not completely satisfied, here's how we can help.</p>
+      <p class="tagline">We're committed to ensuring you have a hassle-free shopping experience. If you're not
+        completely satisfied, here's how we can help.</p>
     </div>
-    
+
     <div class="policy-section">
       <h2><i class="fas fa-clipboard-check"></i> Key Policy Points</h2>
       <ul class="policy-list">
         <li>
           <i class="fas fa-calendar-check"></i>
-          <div><span class="highlight">Return Window:</span> <strong>7–14 days</strong> from delivery date<span class="badge">IMPORTANT</span></div>
+          <div><span class="highlight">Return Window:</span> <strong>7–14 days</strong> from delivery date<span
+              class="badge">IMPORTANT</span></div>
         </li>
         <li>
           <i class="fas fa-box-open"></i>
-          <div><span class="highlight">Condition:</span> Items must be <strong>unused, in original packaging</strong> with all tags attached</div>
+          <div><span class="highlight">Condition:</span> Items must be <strong>unused, in original packaging</strong>
+            with all tags attached</div>
         </li>
         <li>
           <i class="fas fa-ban"></i>
-          <div><span class="highlight">Non-Returnable:</span> Personalized items, perishable goods, and intimate apparel</div>
+          <div><span class="highlight">Non-Returnable:</span> Personalized items, perishable goods, and intimate apparel
+          </div>
         </li>
         <li>
           <i class="fas fa-money-bill-wave"></i>
-          <div><span class="highlight">Refund Processing:</span> <strong>5–7 business days</strong> after we receive and inspect your return</div>
+          <div><span class="highlight">Refund Processing:</span> <strong>5–7 business days</strong> after we receive and
+            inspect your return</div>
         </li>
         <li>
           <i class="fas fa-shipping-fast"></i>
-          <div><span class="highlight">Shipping Costs:</span> Original shipping is non-refundable unless the return is due to our error</div>
+          <div><span class="highlight">Shipping Costs:</span> Original shipping is non-refundable unless the return is
+            due to our error</div>
         </li>
         <li>
           <i class="fas fa-sync-alt"></i>
-          <div><span class="highlight">Exchanges:</span> Defective/damaged items will be replaced at no additional cost</div>
+          <div><span class="highlight">Exchanges:</span> Defective/damaged items will be replaced at no additional cost
+          </div>
         </li>
       </ul>
     </div>
-    
+
     <div class="policy-section">
       <h2><i class="fas fa-list-ol"></i> How to Initiate a Return</h2>
       <ul class="policy-list">
@@ -70,38 +155,39 @@
         </li>
       </ul>
     </div>
-    
+
     <div class="contact-card">
       <h2><i class="fas fa-headset"></i> Need Help? Contact Us</h2>
       <p>Our customer service team is here to assist you with any questions about returns.</p>
-      
+
       <div class="contact-info">
         <div class="contact-item">
           <i class="fas fa-envelope"></i>
           <p>Email</p>
           <p>prabhunediamonds@gmail.com</p>
         </div>
-        
+
         <div class="contact-item">
           <i class="fas fa-phone"></i>
           <p>Phone</p>
           <p>+91 9822850279</p>
         </div>
-        
+
         <div class="contact-item">
           <i class="fas fa-clock"></i>
           <p>Hours</p>
           <p>Mon-Fri, 9AM-6PM EST</p>
         </div>
       </div>
-      
+
       <a href="mailto:returns@yourstore.com" class="cta-button">
         <i class="fas fa-paper-plane"></i> Start a Return Request
       </a>
     </div>
-    
+
     <div class="footer-note">
-      <p><i class="fas fa-heart" style="color:#e91e63;"></i> Thank you for shopping with us! We appreciate your business and are committed to resolving any issues promptly.</p>
+      <p><i class="fas fa-heart" style="color:#e91e63;"></i> Thank you for shopping with us! We appreciate your business
+        and are committed to resolving any issues promptly.</p>
       <p style="margin-top:10px; font-size:0.85rem;">Last updated: June 2023 | Policy subject to change</p>
     </div>
   </div>

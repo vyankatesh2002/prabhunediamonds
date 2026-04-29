@@ -16,12 +16,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         // Map page names to nav links (handle inconsistencies)
-        const pageLinks = {
-            'index': ['index.html', 'home'],
-            'about': ['about.html', 'about-us', 'about'],
-            'products': ['products.html', 'Products.html', 'our-products', 'products'],
-            'consultation': ['consultation.html', 'consultation']
-        };
+    const pageLinks = {
+        'index': ['index.html', 'home'],
+        'about': ['about.html', 'about-us', 'about'],
+        'products': ['products.html', 'Products.html', 'our-products', 'products'],
+        'consultation': ['consultation.html', 'consultation'],
+        'faq': ['faq.html', 'FAq.html', 'faq'],
+        'privacy': ['privacy.html', 'privacy'],
+        'refund': ['refund.html', 'Refund .html', 'refund']
+    };
         
         const targetLinks = pageLinks[currentPage] || [];
         
